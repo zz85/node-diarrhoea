@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/zz85/node-diarrhoea/issues"
   },
-  "homepage": "https://github.com/zz85/node-diarrhoea"
+  "homepage": "https://github.com/zz85/node-diarrhoea",
+  "dependencies": {
+    "split": "^1.0.0"
+  }
 }
