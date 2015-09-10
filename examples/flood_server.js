@@ -13,7 +13,7 @@ server.on('connection', function(socket) {
 	socket.bind({
 		ping: function(x, time) {
 			recvMeter.inc();
-			// socket.post_message('pong', x, time);
+			socket.post_message('pong', x, time);
 		}
 	});
 
