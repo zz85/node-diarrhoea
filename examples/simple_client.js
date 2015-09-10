@@ -1,3 +1,4 @@
+// simple client example
 var uds = require('../index');
 
 var client = new uds.Client();

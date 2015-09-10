@@ -15,8 +15,8 @@ Diarrhoea isn't always fun, but hopfully it helps to ease some discomfort.
 var Server = require('diarrhoea').Server;
 
 var udsPath = './hello.sock';
-var server = new Server(udsPath);
-server.listen();
+var server = new Server();
+server.listen(udsPath);
 
 server.on('connection', onConnection);
 
@@ -27,7 +27,7 @@ var handler = {
 };
 
 function onConnection(client) {
-	client.postMessage('hello', 1234); // makes a rpc call to client
+	client.post_message('hello', 1234); // makes a rpc call to client
 
 	client.bind(handler);
 
@@ -47,10 +47,10 @@ function onConnection(client) {
 ```js
 var Client = require('diarrhoea').Client;
 var udsPath = './hello.sock';
-var client = new Client(udsPath);
+var client = new Client();
+client.connect(udsPath);
 
-
-client.postMessage('ping', Math.random());
+client.post_message('ping', Math.random());
 // possible to do reflections in es6
 
 var handler = {
@@ -65,3 +65,5 @@ client.on('end', function() {
 	console.log('socket closed!');
 });
 ````
+
+More examples under `examples/`
