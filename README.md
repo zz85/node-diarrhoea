@@ -1,15 +1,28 @@
 # Diarrhoea
-Diarrhoea is a simple node.js library for making IPC/RPC calls over UDS.
+Diarrhoea is a simple node.js library for making IPC/RPC calls between different processes quickly over UDS. This may be useful for scaling tasks out of a single node process.
 
 Using UDS or Unix Domain Sockets is one of the most efficient approaches for inter-process communication.
 They behave almost like TCP Sockets, without the overheads and latency of the network layer.
 
-### Why diarrhoea (UK spelling of diarrhea)?
-I was thinking of names that means fast, unfortunately I'm not very creative with names.
-Diarrhoea isn't always fun, but hopfully it helps to ease some discomfort.
+### Why "Diarrhoea"?
+Diarrhoea is the UK spelling of diarrhea, which describes some things that move fluidly and fast, and not very public. It isn't the best experience usually, but is sometimes required for your systems. (It's unfortunate I'm not very creative with names).
 
-## Example
 
+## Usage
+
+Npm installable, or git clone the repository. Also see examples below.
+
+```sh
+npm install diarrhoea
+```
+
+Running 1x `node examples/flood_server.js` and 2x `node examples/flood_client.js` on my macbook air shows handling ~60K requests + 60K responses a second.
+
+![screen shot 2015-09-11 at 11 50 35 am](https://cloud.githubusercontent.com/assets/314997/9806794/37d75f12-587c-11e5-9b0d-4b9d6d91454b.png)
+
+
+## Examples
+Check out and run the examples in `examples/*` (you may need to npm install for dev dependencies).
 
 ```js
 var Server = require('diarrhoea').Server;
