@@ -20,6 +20,21 @@ Running 1x `node examples/flood_server.js` and 2x `node examples/flood_client.js
 
 ![screen shot 2015-09-11 at 11 50 35 am](https://cloud.githubusercontent.com/assets/314997/9806794/37d75f12-587c-11e5-9b0d-4b9d6d91454b.png)
 
+## API
+These classes mimics the structure of node.js socket and server objects.
+
+Diarrhoea UDS Classes
+- Server
+ - listen(path)
+
+- Client
+ - connect(path)
+
+- Socket
+ - post_message('method', args...)
+ - emits `close`, `connect`, `error`, `end`
+ - bind(object)
+ - end
 
 ## Examples
 Check out and run the examples in `examples/*` (you may need to npm install for dev dependencies).
@@ -79,4 +94,5 @@ client.on('end', function() {
 });
 ````
 
-More examples under `examples/`
+### Upcoming
+- request+response rpc style calls.
